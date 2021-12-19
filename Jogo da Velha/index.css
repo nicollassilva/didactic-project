@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.game-header {
+    width: 50vw;
+    height: 100px;
+    background-color: #444;
+    border: 2px solid #333;
+    margin-bottom: 20px;
+}
+
+.game-header .turn {
+    width: 100px;
+    height: 100px;
+    background-color: #555;
+    font-size: 40px;
+    font-weight: 700;
+    color: #f1f1f1;
+    float: left;
+}
+
+.game-header .score {
+    width: calc(100% - 120px);
+    padding: 10px;
+    height: 80px;
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: 700;
+    color: #f1f1f1;
+}
+
+#app {
+    width: 50vw;
+    height: calc(50vh);
+    background-color: #555;
+    position: relative;
+    border: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app > .block {
+    font-size: 40px;
+    color: #aaa;
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    box-shadow: 1px 0 0 #444, 0 1px 0 #444;
+}
+
+#app > .block:not(.winner):hover {
+    box-shadow: 1px 0 0 #444, 0 1px 0 #444, inset 0 0 0px 1px rgba(255, 255, 255, .4);
+    cursor: pointer;
+    color: white;
+}
+
+#app > .block.winner {
+    background-color: cyan !important;
+    color: #444;
+    font-size: 60px;
+}
