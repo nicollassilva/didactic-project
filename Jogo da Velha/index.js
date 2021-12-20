@@ -36,12 +36,24 @@ class Game {
     }
     
     init() {
+        this.destroyAllGameBlocks()
         this.generateGameBlocks()
 
         this.gameManager.turnElement = document.querySelector('.game-header .turn')
+        this.gameManager.turnElement.style.color = 'white'
+
         this.gameManager.scoreElement = document.querySelector('.game-header .score')
+        this.gameManager.scoreElement.style.color = 'white'
 
         this.randomTurn()
+    }
+
+    destroyAllGameBlocks() {
+        let blocks = document.querySelectorAll('#app .block')
+
+        blocks.forEach(block => {
+            block.remove()
+        })
     }
 
     generateGameBlocks() {
